@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toki English — B2 Vocabulary</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="sakura-container" id="sakura-container"></div>
+
+  <div class="app-container">
+    <div class="header">
+      <div class="logo">
+        <span class="sakura-icon">🌸</span>
+        <h1>Toki English</h1>
+      </div>
+    </div>
+
+    <div id="auth-screen" class="card">
+      <span class="badge">B2 Vocabulary</span>
+      <h2>Вход</h2>
+      <p>Введите имя и пароль, чтобы начать тест.</p>
+
+      <form id="auth-form">
+        <input id="user-name" class="input-field" type="text" placeholder="Имя" required />
+        <br /><br />
+        <input id="user-pass" class="input-field" type="password" placeholder="Пароль" required />
+        <br /><br />
+        <button class="btn btn-primary" type="submit">Начать</button>
+        <p id="auth-error" class="hidden" style="color: red; margin-top: 12px;"></p>
+      </form>
+    </div>
+
+    <div id="start-screen" class="card hidden">
+      <span class="badge">Start</span>
+      <h2>Готовы?</h2>
+      <p>Нажмите, чтобы начать тест.</p>
+      <button id="start-btn" class="btn btn-primary">Начать тест</button>
+      <button id="history-btn" class="btn btn-secondary" style="margin-top: 12px;">История</button>
+    </div>
+
+    <div id="quiz-screen" class="card hidden">
+      <div class="quiz-header">
+        <span id="progress-text">Вопрос 1 / 20</span>
+        <span id="timer-text" class="timer-badge">00:00</span>
+      </div>
+
+      <div class="progress-bar-bg">
+        <div id="progress-bar" class="progress-bar-fill"></div>
+      </div>
+
+      <div class="word-card">
+        <h2 id="word">word</h2>
+      </div>
+
+      <div id="options-container" class="options-grid"></div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <span class="badge">Результат</span>
+      <h2>Тест завершён</h2>
+
+      <div class="results-summary">
+        <div class="stat-box">
+          <span class="stat-label">Баллы</span>
+          <span id="final-score" class="stat-value">0</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">Время</span>
+          <span id="final-time" class="stat-value">00:00</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">Процент</span>
+          <span id="final-percent" class="stat-value">0%</span>
+        </div>
+      </div>
+
+      <button id="restart-btn" class="btn btn-primary">Пройти снова</button>
+    </div>
+
+    <div id="history-screen" class="card hidden">
+      <span class="badge">History</span>
+      <h2>Результаты</h2>
+      <div id="history-list"></div>
+      <button id="back-btn" class="btn btn-secondary" style="margin-top: 12px;">Назад</button>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

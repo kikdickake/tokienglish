@@ -307,6 +307,11 @@ function showQuestion() {
   if (!wordEl || !optionsContainer || !progressText || !progressBar) return;
 
   const q = vocabularyB2[currentQuestionIndex];
+  if (!q || !q.options || q.correct === undefined) {
+    console.error("Ошибка в данных вопроса:", q, currentQuestionIndex);
+    return;
+  }
+
   const correctText = q.options[q.correct];
   const shuffledOptions = shuffleArray([...q.options]);
   const correctIndex = shuffledOptions.indexOf(correctText);

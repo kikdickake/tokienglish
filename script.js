@@ -27,7 +27,6 @@ if (!deviceId) {
 }
 
 const vocabularyB2 = [
- [
   {
     word: "cause",
     options: ["Следствие", "Причина", "Результат", "Решение"],
@@ -238,7 +237,6 @@ const vocabularyB2 = [
     options: ["Награда", "Предупреждение", "Угроза", "Разрешение"],
     correct: 1
   }
-]
 ];
 
 let currentQuestionIndex = 0;
